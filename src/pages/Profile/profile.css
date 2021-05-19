@@ -1,0 +1,16 @@
+.Myprofile {
+  background-image: url("https://images.pexels.com/photos/4458554/pexels-photo-4458554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  width: 100%;
+  min-height: 650px;
+  height: 100%;
+  padding-top: 90px;
+  padding-left: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nameCurrentUser {
+  font-size: 50px;
+  font-weight: 500;
+  color: #213940;
+}

@@ -1,0 +1,11 @@
+/*general */
+
+/*partie navbar */
+.navbar {
+  padding-left: 15px;
+}
+/*partie jumbotron */
+
+.nav-link {
+  cursor: pointer;
+}

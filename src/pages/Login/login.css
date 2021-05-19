@@ -1,0 +1,44 @@
+.Login {
+  width: 100%;
+  min-height: 650px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.pexels.com/photos/5083407/pexels-photo-5083407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  height: 350px;
+  justify-content: center;
+  border: solid rgb(196, 192, 192) 1px;
+  border-radius: 5px;
+  background-color: white;
+}
+.login-form input {
+  width: 60%;
+  height: 35px;
+  align-self: center;
+  margin: 10px;
+}
+
+.btn_login_page_login {
+  outline: none;
+  background-color: #213940;
+
+  width: 150px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  font-weight: 400;
+  font-size: 25px;
+  box-shadow: 1px 1px 12px #555;
+}
+.btn_login_page_login:hover {
+  background-color: #456472;
+}
