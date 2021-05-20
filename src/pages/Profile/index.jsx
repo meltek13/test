@@ -1,13 +1,16 @@
 import { React, useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import EditProfile from "./editProfile";
 import Cookies from "js-cookie";
 import "./profile.css";
 
 const Profile = () => {
   const [currentUser, setCurrentUser] = useState("");
+  const [userPost, setUserPost] = useState("");
   const loged = useSelector((state) => state.userReducer.loged);
   const history = useHistory();
+  //const id = Cookies.get("currentUserId");
 
   const myProfileDisplay = () => {
     fetch("http://localhost:1337/users/me", {
@@ -23,6 +26,18 @@ const Profile = () => {
       });
   };
 
+  //fetch(`http://localhost:1337/posts?user.id=${id}`, {
+  //method: "get",
+  //  headers: {
+  //    Authorization: `Bearer ${Cookies.get("token")}`,
+  //    "Content-Type": "application/json",
+  // },
+  //})
+  //  .then((response) => response.json())
+  //  .then((response) => {
+  //    setUserPost(response);
+  //  });
+
   useEffect(() => {
     myProfileDisplay();
   }, []);
@@ -30,13 +45,17 @@ const Profile = () => {
   return (
     <>
       {loged ? (
-        <div className="Myprofile">
-          <h1>
-            Hello{" "}
-            <span className="nameCurrentUser">"{currentUser.username}"</span>
-          </h1>{" "}
-          <h3>{currentUser.email}</h3>
-        </div>
+        <>
+          <div className="Myprofile">
+            <h1>
+              Hello
+              <span className="nameCurrentUser">"{currentUser.username}"</span>
+            </h1>
+            <h3 className="emailprofil">{currentUser.email}</h3>
+            <EditProfile />
+          </div>
+          <h2 className="post">My Lastest Posts ({userPost.length}) :</h2>
+        </>
       ) : (
         history.push("/login")
       )}

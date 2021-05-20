@@ -8,9 +8,25 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.emailprofil {
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
 
 .nameCurrentUser {
   font-size: 50px;
   font-weight: 500;
   color: #213940;
+}
+
+.btn_confirm {
+  outline: none;
+  background-color: #213940;
+
+  width: 120px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+
+  box-shadow: 1px 1px 12px #555;
 }
