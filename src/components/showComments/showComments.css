@@ -1,0 +1,54 @@
+.DisplayPost {
+  padding-top: 50px;
+  width: 80vw;
+  margin: auto;
+}
+.cardComment {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.post {
+  margin-bottom: 20px;
+}
+
+.titleUserComment {
+  background-color: #213940;
+  border-radius: 9px 9px 0px 0px;
+  color: white;
+  height: 50px;
+  padding-top: 5px;
+}
+.titleUserComment:hover {
+  background-color: #456472;
+}
+.user {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  padding-left: 15px;
+}
+.test {
+  text-decoration: none;
+}
+
+.contentUserComment {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px;
+}
+
+.btnDelete {
+  border: none;
+  background-color: white;
+  border-radius: 0px 0px 10px 0px;
+}
+
+.quote {
+  font-size: smaller;
+}
+
+.text {
+  margin-bottom: 15px;
+}

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
+import "./createPost.css";
+import { useHistory } from "react-router-dom";
 
 const CreatePost = () => {
   const [postText, setPostText] = useState();
+  const history = useHistory();
 
   const id = Cookies.get("currentUserId");
 
@@ -25,19 +28,25 @@ const CreatePost = () => {
       .then((response) => response.json())
       .then((postdata) => {
         console.log(postdata);
+        history.go(0);
       })
       .catch((err) => console.log(err));
   };
   return (
     <div className="CreatePost">
-      <form>
+      <form className="formComment">
         <input
           type="text"
           name="text"
-          placeholder="Write a comment ..."
+          placeholder="Something to say ... ?"
+          className="textAreaComment"
           onChange={(e) => setPostText(e.target.value)}
         />
-        <button type="submit" onClick={fetchCreatePost}>
+        <button
+          className="btnSubmitComment "
+          type="submit"
+          onClick={fetchCreatePost}
+        >
           Comment
         </button>
       </form>

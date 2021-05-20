@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Jumbotron from "components/Jumbotron";
 import CreatePost from "components/createPost";
 import ShowComments from "components/showComments";
+import JumbotronConnected from "components/jumbotronConnected";
 const Home = () => {
   const loged = useSelector((state) => state.userReducer.loged);
 
@@ -10,12 +11,14 @@ const Home = () => {
     <div className="Home">
       {loged ? (
         <>
-          <Jumbotron />
+          <JumbotronConnected />
           <CreatePost />
           <ShowComments />
         </>
       ) : (
-        <Jumbotron />
+        <>
+          <Jumbotron />
+        </>
       )}
     </div>
   );

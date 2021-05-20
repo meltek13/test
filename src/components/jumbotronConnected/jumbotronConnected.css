@@ -1,0 +1,71 @@
+.title_jumbotron2 {
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 60px;
+  font-weight: 600;
+  color: black;
+}
+
+.lead {
+  margin-left: 40px;
+  color: black;
+  font-weight: 400;
+}
+.react {
+  color: #213940;
+  font-weight: 700;
+  font-size: 50px;
+}
+.nav_and_jumbo2 {
+  background-image: url("https://images.pexels.com/photos/1113976/pexels-photo-1113976.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 290px;
+}
+
+.btn_login {
+  margin-left: 40px;
+  outline: none;
+  background-color: #213940;
+  height: auto;
+  width: 150px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  font-weight: 400;
+  font-size: 25px;
+  box-shadow: 1px 1px 12px #555;
+}
+
+.btn_login:hover {
+  background-color: #456472;
+}
+
+.wrapper {
+  /*This part is important for centering*/
+  display: flex;
+  align-items: center;
+}
+
+.typing-demo {
+  width: 24ch;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

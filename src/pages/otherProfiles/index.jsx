@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import { React, useState, useEffect } from "react";
+import "./otherProfiles.css";
+import dayjs from "dayjs";
 
 const OtherProfiles = () => {
   const { User_Id } = useParams();
@@ -36,22 +38,33 @@ const OtherProfiles = () => {
   useEffect(() => UserInfo(), []);
 
   return (
-    <div>
+    <>
       <div className="OtherProfile">
-        <h2>Profil de l`auteur:</h2>
+        <h2>Profil</h2>
         <p>{userInfo.username}</p>
         <p>{userInfo.email}</p>
-
-        {userPost.map((post) => (
-          <li key={post.id} style={{ listStyleType: "none" }}>
-            {post.user.username}
-
-            <br />
-            {post.text}
-          </li>
-        ))}
       </div>
-    </div>
+
+      {userPost.map((post) => (
+        <div className="DisplayPost">
+          <div className="cardComment">
+            <div className="titleUserComment user">{post.user.username}</div>
+
+            <div className="contentUserComment">
+              <div classname="comment">
+                <div className="text">{post.text}</div>
+
+                <div>
+                  <quote className="quote">
+                    {dayjs(post.created_at).format("DD MMMM YYYY")}
+                  </quote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
   );
 };
 
