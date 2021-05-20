@@ -4,6 +4,7 @@ import "./showComments.css";
 import { Link } from "react-router-dom";
 import "./showComments.css";
 import dayjs from "dayjs";
+import Like from "components/Likes";
 
 const ShowComments = () => {
   const id = Cookies.get("currentUserId");
@@ -23,7 +24,7 @@ const ShowComments = () => {
       })
       .catch((err) => console.log(err));
   };
-  const triByDate = arrayPost.sort(function (a, b) {
+  arrayPost.sort(function (a, b) {
     a = new Date(a.created_at);
     b = new Date(b.created_at);
     return a > b ? -1 : a < b ? 1 : 0;
@@ -58,7 +59,7 @@ const ShowComments = () => {
           <div className="contentUserComment">
             <div classname="comment">
               <div className="text">{post.text}</div>
-
+              <Like like={post.like} id={post.id} />
               <div>
                 <quote className="quote">
                   {dayjs(post.created_at).format("DD MMMM YYYY")}

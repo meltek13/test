@@ -1,7 +1,6 @@
-/* eslint-disable max-len */
-/* eslint-disable no-console */
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom";
 
 const EditProfile = () => {
   const id = Cookies.get("currentUserId");
@@ -9,6 +8,7 @@ const EditProfile = () => {
   const email = Cookies.get("currentUserEmail");
   const [newUsername, setUsername] = useState(username);
   const [newEmail, setEmail] = useState(email);
+  const history = useHistory();
 
   const fetchEditedProfile = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const EditProfile = () => {
       newEmail,
     };
 
-    fetch("http://localhost:1337/users/me", {
+    fetch(`http://localhost:1337/users/${id}`, {
       method: "put",
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,
@@ -29,11 +29,11 @@ const EditProfile = () => {
     })
       .then((response) => response.json())
       .then((response) => {
-        // eslint-disable-next-line no-console
         console.log(response);
         Cookies.set("currentUserId", response.id);
         Cookies.set("currentUserEmail", response.email);
         Cookies.set("currentUserUserName", response.username);
+        history.push("/profile");
       })
       .catch((err) => console.log(err));
   };

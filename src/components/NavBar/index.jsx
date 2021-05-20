@@ -20,7 +20,9 @@ const Navbar = () => {
     <div>
       {loged ? (
         <nav className="navbar navbar-expand-lg navbar-light ">
-          <a className="navbar-brand">Melbook</a>
+          <a href="/" className="navbar-brand">
+            Melbook
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -46,7 +48,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={handleClick}>
+                <a href="" className="nav-link" onClick={handleClick}>
                   Se deconnecter
                 </a>
               </li>
@@ -55,7 +57,9 @@ const Navbar = () => {
         </nav>
       ) : (
         <nav className="navbar navbar-expand-lg navbar-light ">
-          <a className="navbar-brand">Melbook</a>
+          <a href="/" className="navbar-brand">
+            Melbook
+          </a>
           <button
             className="navbar-toggler"
             type="button"
